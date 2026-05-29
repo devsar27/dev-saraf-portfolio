@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { name: "About", href: "/about" },
@@ -37,12 +38,12 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo/Name */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-purple-400 hover:to-blue-400 transition-all duration-500"
               >
                 Dev Saraf
-              </a>
+              </Link>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -54,8 +55,8 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="relative px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 group"
                   >
                     <span className="relative z-10">{link.name}</span>
@@ -64,7 +65,7 @@ const Navbar = () => {
                       whileHover={{ scale: 1.05 }}
                     />
                     <motion.div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-                  </a>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -99,13 +100,13 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className="block text-gray-300 hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-all duration-300"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </motion.div>
                 ))}
               </div>

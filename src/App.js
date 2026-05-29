@@ -10,6 +10,8 @@ import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Achievements from "./components/Achievements"
 import Experience from "./components/Experience"
+import About from "./components/About"
+import Contact from "./components/Contact"
 import ParticlesBackground from "./components/ParticlesBackground"
 import LoadingScreen from "./components/LoadingScreen"
 import "./App.css"
@@ -87,22 +89,8 @@ function App() {
               <Route path="/experience" element={<Experience />} />
 
               {/* Other Pages */}
-              <Route
-                path="/about"
-                element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <h1 className="text-4xl">About Page Coming Soon</h1>
-                  </div>
-                }
-              />
-              <Route
-                path="/contact"
-                element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <h1 className="text-4xl">Contact Page Coming Soon</h1>
-                  </div>
-                }
-              />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
           <Footer />

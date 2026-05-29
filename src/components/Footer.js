@@ -1,35 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Code, Trophy } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Code } from 'lucide-react';
 
 const socialLinks = [
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com",
+    href: "https://github.com/devsar27",
     color: "hover:text-gray-300",
     bgColor: "hover:bg-gray-800/50",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/dev-saraf-0248a4252/",
     color: "hover:text-blue-400",
     bgColor: "hover:bg-blue-500/20",
   },
   {
     name: "LeetCode",
     icon: Code,
-    href: "https://leetcode.com",
+    href: "https://leetcode.com/u/DevSaraf71",
     color: "hover:text-yellow-400",
     bgColor: "hover:bg-yellow-500/20",
-  },
-  {
-    name: "CodeChef",
-    icon: Trophy,
-    href: "https://codechef.com",
-    color: "hover:text-orange-400",
-    bgColor: "hover:bg-orange-500/20",
   },
 ];
 
