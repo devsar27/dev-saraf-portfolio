@@ -67,16 +67,38 @@ const ContactPage = () => {
 
     setSubmissionStatus("sending")
 
-    // Mock API request with a 2-second delay to show the nice animation loader
-    setTimeout(() => {
-      setSubmissionStatus("success")
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/devsaraf71@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       })
-    }, 2000)
+
+      if (response.ok) {
+        setSubmissionStatus("success")
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        setSubmissionStatus("idle")
+        alert("Failed to send message. Please try again or contact via devsaraf71@gmail.com.")
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error)
+      setSubmissionStatus("idle")
+      alert("An error occurred. Please try again or contact via devsaraf71@gmail.com.")
+    }
   }
 
   const copyEmailToClipboard = () => {
